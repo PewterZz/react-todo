@@ -38,25 +38,25 @@ function App() {
 
   return (
     <div className="container">
-      <div className="todo-container">
-        <h1 className="todo-header">What to do today?</h1>
+      <div className="subcontainer">
+        <h1 className="header">What to do today?</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
             value={Todo}
             onChange={handleChange}
             placeholder="Add what you want to do..."
-            className="todo-input"
+            className="input"
           />
           <button className="todo-btn">Add</button>
         </form>
-        <ul className="todo-list">
+        <ul className="list">
           {todos.map((todo, index) => (
-            <li key={index} className={`todo-text ${isCrossedOut[index] ? 'crossed-out' : 'todo-item'}`}>
+            <li key={index} className={`text ${isCrossedOut[index] ? 'crossed-out' : 'item'}`}>
               <label>
                 <input
                   type="checkbox"
-                  className="todo-checkbox"
+                  className="checkbox"
                   checked={isCrossedOut[index]}
                   onChange={() => handleToggle(index)}
                 />
@@ -64,7 +64,7 @@ function App() {
                   {todo}
                 </span>
               </label>
-              <button onClick={() => handleDelete(index)} className="todo-delete-btn">
+              <button onClick={() => handleDelete(index)} className="delete-btn">
                 Delete
               </button>
             </li>
